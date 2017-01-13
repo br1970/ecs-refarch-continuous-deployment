@@ -55,9 +55,7 @@ Resources:
         - Name: simple-app
           Image: !Sub ${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/${Repository}:${Tag}
           EntryPoint:
-            - /usr/sbin/apache2
-            - -D
-            - FOREGROUND
+            - node /usr/src/app/notification.js
           Essential: true
           Memory: 128
           MountPoints:
